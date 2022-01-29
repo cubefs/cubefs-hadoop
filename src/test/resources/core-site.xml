@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+    <property>
+        <name>fs.defaultFS</name>
+        <value>cfs://adlstest/</value>
+    </property>
+    <property>
+        <name>fs.cfs.impl</name>
+        <value>io.cubefs.CubefsFileSystem</value>
+    </property>
+
+    <property>
+        <name>cfs.volume.name</name>
+        <value>adlstest</value>
+    </property>
+    <property>
+        <name>cfs.log.dir</name>
+        <value>/home/cfs/client/log</value>
+    </property>
+    <property>
+        <name>cfs.log.level</name>
+        <value>DEBUG</value>
+    </property>
+    <property>
+        <name>cfs.access.key</name>
+        <value>cCwDvfrAiBYdagQ5</value>
+    </property>
+    <property>
+        <name>cfs.secret.key</name>
+        <value>dicRzKnrnP2H8TZyufjzTsg38Nmx94T5</value>
+    </property>
+    <property>
+        <name>cfs.master.address</name>
+        <value>10.177.69.105:17010,10.177.69.106:17010,10.177.117.108:17010</value>
+    </property>
+</configuration>
