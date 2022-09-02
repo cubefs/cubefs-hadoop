@@ -24,7 +24,7 @@ Modify the configuration file(core-site.xml or hdfs-site.xml) and add the follow
 ```xml
 <property>
 	<name>fs.cfs.impl</name>
-	<value>io.cubefs.CfsFileSystem</value>
+	<value>io.cubefs.CubefsFileSystem</value>
 </property>
 
 <property>
