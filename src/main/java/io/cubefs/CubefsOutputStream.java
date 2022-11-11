@@ -16,6 +16,7 @@ package io.cubefs;
 
 
 import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.fs.Syncable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,7 +25,7 @@ import java.io.OutputStream;
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
 
-public class CubefsOutputStream extends OutputStream {
+public class CubefsOutputStream extends OutputStream implements Syncable {
     private boolean closed;
     private int fileHandle;
     private CubefsMount cfs;
@@ -110,5 +111,32 @@ public class CubefsOutputStream extends OutputStream {
                 throw new IOException("close failed, fd = " + fileHandle);
             }
         }
+    }
+
+    @Override
+    public void sync() throws IOException {
+        LOG.debug("sync,fd = " + fileHandle);
+        if (closed) {
+            throw new IOException("stream was closed");
+        }
+        flush();
+    }
+
+    @Override
+    public void hflush() throws IOException {
+        LOG.debug("hflush,fd = " + fileHandle);
+        if (closed) {
+            throw new IOException("stream was closed");
+        }
+        flush();
+    }
+
+    @Override
+    public void hsync() throws IOException {
+        LOG.debug("hsync,fd = " + fileHandle);
+        if (closed) {
+            throw new IOException("stream was closed");
+        }
+        flush();
     }
 }
