@@ -62,7 +62,7 @@ public interface CubefsLib extends Library {
             StringBuilder sb = new StringBuilder();
             sb.append("inodeid:");
             sb.append(ino);
-            sb.append(" szie:");
+            sb.append(" size:");
             sb.append(size);
             sb.append(" uid:");
             sb.append(uid);
