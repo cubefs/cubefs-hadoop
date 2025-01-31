@@ -112,7 +112,7 @@ public class CubefsFileSystem extends FileSystem {
 
         int ret = cfs.startClient();
         if (ret < 0) {
-            throw new IOException(String.format("Chubaofs initialize fail for cfs://%s,code=%s", volumeName, ret));
+            throw new IOException(String.format("CubeFS initialize fail for cfs://%s,code=%s", volumeName, ret));
         }
     }
 
